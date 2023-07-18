@@ -14,9 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-
   cupertino_icons: ^1.0.2
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:
@@ -41,14 +40,10 @@ flutter:
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-
-  fonts:
-    - family: Raleway
-    - fonts:
-      - asset: assets/fonts/Raleway-Italic.ttf
-      - asset: assets/fonts/Raleway-Regular.ttf
+  #fonts:
+   # - family: Raleway
+    #- fonts:
+     # - asset: assets/fonts/Raleway-Italic.ttf
+      #- asset: assets/fonts/Raleway-Regular.ttf
 
 
