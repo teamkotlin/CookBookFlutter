@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'animation/animate_page_route.dart';
+import 'design/export_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: AnimatePageRouteScreen(),
+      //home: AnimatePageRouteScreen(),
+      home: ExportingFonts(),
     );
   }
 }
