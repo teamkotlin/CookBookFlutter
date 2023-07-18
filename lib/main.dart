@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.teal,
+        fontFamily: 'Raleway',
       ),
       //home: AnimatePageRouteScreen(),
       home: ExportingFonts(),
