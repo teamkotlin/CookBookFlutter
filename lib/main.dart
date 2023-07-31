@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'animation/animate_page_route.dart';
 import 'design/ui_change_orientation.dart';
 import 'effects/downloading_screen.dart';
+import 'effects/filter_carousel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
       //home: ExportingFonts(),
       //home: UIChangeOrientaion(),
       //home: DownloadingScreen(),
-      home: InstagramFilterSelection(),
+      home: FilterCarousel(),
     );
   }
 }
