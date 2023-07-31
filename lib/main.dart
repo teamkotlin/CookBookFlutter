@@ -1,20 +1,21 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/plugins/take_picture_screen.dart';
-import 'package:flutter_projects/test.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'animation/animate_page_route.dart';
-import 'design/ui_change_orientation.dart';
-import 'effects/downloading_screen.dart';
-import 'effects/filter_carousel.dart';
-
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  final cameras = await availableCameras();
+  final CameraDescription camera = cameras.first;
+  runApp(MyApp(
+    camera: camera,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.camera});
+
+  final CameraDescription camera;
 
   ThemeData _buildTheme(brightness) {
     var baseTheme = ThemeData(brightness: brightness);
@@ -54,7 +55,9 @@ class MyApp extends StatelessWidget {
       //home: UIChangeOrientaion(),
       //home: DownloadingScreen(),
       //home: FilterCarousel(),
-      home: TakePictureScreen(),
+      home: TakePictureScreen(
+        camera: camera,
+      ),
     );
   }
 }
