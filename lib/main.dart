@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/plugins/take_picture_screen.dart';
 import 'package:flutter_projects/test.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,6 +9,7 @@ import 'effects/downloading_screen.dart';
 import 'effects/filter_carousel.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -51,7 +53,8 @@ class MyApp extends StatelessWidget {
       //home: ExportingFonts(),
       //home: UIChangeOrientaion(),
       //home: DownloadingScreen(),
-      home: FilterCarousel(),
+      //home: FilterCarousel(),
+      home: TakePictureScreen(),
     );
   }
 }
