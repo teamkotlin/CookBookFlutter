@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       //home: ExportingFonts(),
       //home: UIChangeOrientaion(),
       //home: DownloadingScreen(),
-      home: ExampleCupertinoDownloadButton(),
+      home: InstagramFilterSelection(),
     );
   }
 }
