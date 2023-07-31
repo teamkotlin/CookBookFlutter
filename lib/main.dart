@@ -1,6 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/plugins/take_picture_screen.dart';
+import 'package:flutter_projects/plugins/video_player_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
@@ -55,9 +55,10 @@ class MyApp extends StatelessWidget {
       //home: UIChangeOrientaion(),
       //home: DownloadingScreen(),
       //home: FilterCarousel(),
-      home: TakePictureScreen(
-        camera: camera,
-      ),
+      // home: TakePictureScreen(
+      //   camera: camera,
+      // ),
+      home: VideoPlayerScreen(),
     );
   }
 }
