@@ -64,7 +64,7 @@ class _TakePictureScreenState extends State<TakePictureScreen> {
             image = await _controller.takePicture();
             if (!mounted) return;
             setState(() {
-              
+
             });
           } catch (e) {
             debugPrint("Failed to take picture=>$e");
