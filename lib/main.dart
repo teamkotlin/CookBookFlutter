@@ -1,7 +1,11 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_projects/bloc/blocs/internet_bloc/internet_bloc.dart';
 import 'package:flutter_projects/plugins/video_player_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'bloc/screens/connectivity_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,38 +31,42 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      //theme: _buildTheme(Brightness.light),
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        brightness: Brightness.light,
-        primaryColor: Colors.blue[800],
-        appBarTheme: AppBarTheme(
-            centerTitle: true,
-            backgroundColor: Colors.amberAccent,
-            scrolledUnderElevation: 0.2,
-            elevation: 3),
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 52, fontWeight: FontWeight.bold),
-          titleLarge: TextStyle(
-              fontSize: 22,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold),
-          bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Raleway'),
+    return BlocProvider(
+      create: (BuildContext context) {return InternetBloc(); },
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        //theme: _buildTheme(Brightness.light),
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+          brightness: Brightness.light,
+          primaryColor: Colors.blue[800],
+          appBarTheme: AppBarTheme(
+              centerTitle: true,
+              backgroundColor: Colors.amberAccent,
+              scrolledUnderElevation: 0.2,
+              elevation: 3),
+          textTheme: const TextTheme(
+            displayLarge: TextStyle(fontSize: 52, fontWeight: FontWeight.bold),
+            titleLarge: TextStyle(
+                fontSize: 22,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold),
+            bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Raleway'),
+          ),
+          fontFamily: 'Raleway',
         ),
-        fontFamily: 'Raleway',
+        //home: AnimatePageRouteScreen(),
+        //home: ExportingFonts(),
+        //home: UIChangeOrientaion(),
+        //home: DownloadingScreen(),
+        //home: FilterCarousel(),
+        // home: TakePictureScreen(
+        //   camera: camera,
+        // ),
+        //home: VideoPlayerScreen(),
+        home: ConnectivityScreen(),
       ),
-      //home: AnimatePageRouteScreen(),
-      //home: ExportingFonts(),
-      //home: UIChangeOrientaion(),
-      //home: DownloadingScreen(),
-      //home: FilterCarousel(),
-      // home: TakePictureScreen(
-      //   camera: camera,
-      // ),
-      home: VideoPlayerScreen(),
     );
   }
 }
