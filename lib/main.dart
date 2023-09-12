@@ -1,12 +1,14 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_projects/bloc/blocs/auth_bloc/sign_in_bloc.dart';
 import 'package:flutter_projects/bloc/blocs/internet_bloc/internet_bloc.dart';
 import 'package:flutter_projects/bloc/cubit/internet_cubit.dart';
 import 'package:flutter_projects/plugins/video_player_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'bloc/screens/connectivity_screen.dart';
+import 'bloc/screens/signin_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) {return InternetCubit(); },
+      create: (BuildContext context) {return SignInBloc(); },
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
@@ -66,7 +68,8 @@ class MyApp extends StatelessWidget {
         //   camera: camera,
         // ),
         //home: VideoPlayerScreen(),
-        home: ConnectivityScreen(),
+        //home: ConnectivityScreen(),
+        home: SigninScreen(),
       ),
     );
   }
