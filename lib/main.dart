@@ -9,14 +9,17 @@ import 'package:flutter_projects/plugins/video_player_screen.dart';
 import 'package:flutter_projects/routes/route_names.dart';
 import 'package:flutter_projects/routes/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'bloc/screens/connectivity_screen.dart';
 import 'bloc/screens/signin_screen.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   final cameras = await availableCameras();
   final CameraDescription camera = cameras.first;
+
   runApp(MyApp(
     camera: camera,
   ));
@@ -74,7 +77,7 @@ class MyApp extends StatelessWidget {
         //home: ConnectivityScreen(),
         //home: SigninScreen(),
         onGenerateRoute: Routes.onGenerateRoute,
-        initialRoute: RouteNames.home_screen,
+        initialRoute: RouteNames.phone_auth_screen,
       ),
     );
   }
