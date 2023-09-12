@@ -4,7 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_projects/bloc/blocs/auth_bloc/sign_in_bloc.dart';
 import 'package:flutter_projects/bloc/blocs/internet_bloc/internet_bloc.dart';
 import 'package:flutter_projects/bloc/cubit/internet_cubit.dart';
+import 'package:flutter_projects/bloc/cubit/post_cubit.dart';
 import 'package:flutter_projects/plugins/video_player_screen.dart';
+import 'package:flutter_projects/routes/route_names.dart';
+import 'package:flutter_projects/routes/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'bloc/screens/connectivity_screen.dart';
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) {return SignInBloc(); },
+      create: (BuildContext context) {return PostCubit(); },
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
@@ -69,7 +72,9 @@ class MyApp extends StatelessWidget {
         // ),
         //home: VideoPlayerScreen(),
         //home: ConnectivityScreen(),
-        home: SigninScreen(),
+        //home: SigninScreen(),
+        onGenerateRoute: Routes.onGenerateRoute,
+        initialRoute: RouteNames.home_screen,
       ),
     );
   }

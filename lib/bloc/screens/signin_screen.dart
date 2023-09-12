@@ -3,14 +3,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_projects/bloc/blocs/auth_bloc/sign_in_bloc.dart';
 import 'package:flutter_projects/bloc/blocs/auth_bloc/sign_in_event.dart';
 import 'package:flutter_projects/bloc/blocs/auth_bloc/sign_in_state.dart';
+import 'package:flutter_projects/bloc/repositories/post_repository.dart';
+
+import '../../routes/route_names.dart';
 
 class SigninScreen extends StatelessWidget {
   SigninScreen({Key? key}) : super(key: key);
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Sign In"),
@@ -53,7 +58,9 @@ class SigninScreen extends StatelessWidget {
                         backgroundColor: state is SignInValidState
                             ? Colors.teal
                             : Colors.grey),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteNames.connectvity_screen,arguments: {"title":"Connectivity"});
+                    },
                     child: Text("Signin"),
                   ),
                 ),
